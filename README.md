@@ -1,6 +1,7 @@
 # Cliente de rastreio de encomendas (Grupo D)
 
-Aplicação web que consome a **Logistics API** do Grupo C (Estudo de Caso 2, Sistemas Distribuídos, IFCE Tianguá).
+Aplicação web que consome a **Logistics API** do Grupo C (Estudo de Caso 2: Rastreamento de Encomendas
+entre Transportadoras).
 Ela mostra o histórico de cada encomenda, calcula o tempo de transporte e identifica atrasos, depois de padronizar
 os status e as datas das 4 transportadoras.
 
