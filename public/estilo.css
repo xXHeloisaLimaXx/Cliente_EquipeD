@@ -1,0 +1,53 @@
+:root {
+  --fundo: #eef1f4; --painel: #fff; --tinta: #10243e; --suave: #566679; --linha: #d5dce4; --acento: #0b6e6e;
+  --ok: #1b6b3f; --ok-bg: #e0f3e8; --run: #1d4e89; --run-bg: #e3edfa;
+  --tarde: #8a5200; --tarde-bg: #fff0d1; --atraso: #a52019; --atraso-bg: #fde7e5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fundo); color: var(--tinta); font: 15px/1.45 "Segoe UI", system-ui, -apple-system, sans-serif; }
+.topo { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end; padding: 24px clamp(16px, 4vw, 40px); background: var(--tinta); color: #fff; }
+.topo h1 { margin: 0 0 4px; font-size: 1.6rem; letter-spacing: -.01em; }
+.topo p { margin: 0; color: #b9c6d6; }
+.controles { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+label { display: grid; gap: 4px; font-size: .85rem; color: var(--suave); }
+.topo label { color: #b9c6d6; }
+input, select, button { font: inherit; padding: 8px 10px; border: 1px solid var(--linha); border-radius: 6px; background: #fff; color: var(--tinta); }
+button { background: var(--acento); border-color: var(--acento); color: #fff; font-weight: 600; cursor: pointer; }
+button:hover { filter: brightness(1.1); }
+:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
+main { padding: 20px clamp(16px, 4vw, 40px) 48px; max-width: 1280px; margin: 0 auto; }
+#erro { padding: 12px 14px; border-radius: 6px; background: var(--atraso-bg); color: var(--atraso); border: 1px solid #f1b8b3; }
+.resumo { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-bottom: 18px; }
+.resumo button { display: grid; gap: 2px; text-align: left; padding: 12px 14px; background: var(--painel); color: var(--tinta); border: 2px solid var(--linha); border-radius: 8px; }
+.resumo button[aria-pressed="true"] { border-color: var(--acento); }
+.resumo strong { font-size: 1.8rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.resumo span { color: var(--suave); font-weight: 400; }
+.filtros { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin-bottom: 12px; }
+.filtros p { margin: 0 0 8px auto; color: var(--suave); }
+.tabela-wrap { overflow-x: auto; background: var(--painel); border: 1px solid var(--linha); border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 10px; text-align: left; border-bottom: 1px solid var(--linha); white-space: nowrap; }
+th { font-size: .8rem; color: var(--suave); font-weight: 600; background: #f7f9fb; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: #f2f7f7; }
+td.rota { white-space: normal; min-width: 170px; }
+td.cod { font-weight: 600; color: var(--acento); }
+td.num { font-variant-numeric: tabular-nums; }
+.selo { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: .82rem; font-weight: 600; }
+.ENTREGUE_NO_PRAZO { background: var(--ok-bg); color: var(--ok); }
+.ENTREGUE_ATRASO { background: var(--tarde-bg); color: var(--tarde); }
+.EM_ANDAMENTO { background: var(--run-bg); color: var(--run); }
+.ATRASADA { background: var(--atraso-bg); color: var(--atraso); }
+dialog { width: min(920px, 94vw); max-height: 90vh; padding: 0; border: 0; border-radius: 10px; box-shadow: 0 20px 60px rgba(16, 36, 62, .35); color: var(--tinta); }
+dialog::backdrop { background: rgba(16, 36, 62, .55); }
+.det-topo { display: flex; justify-content: space-between; gap: 12px; padding: 18px 22px; border-bottom: 1px solid var(--linha); }
+.det-topo h2 { margin: 0; font-size: 1.3rem; }
+.det-topo p { margin: 2px 0 0; color: var(--suave); }
+.fatos { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; padding: 16px 22px; }
+.fatos dt { font-size: .8rem; color: var(--suave); }
+.fatos dd { margin: 0; font-weight: 600; }
+.det-corpo { padding: 0 22px 22px; overflow-x: auto; }
+.det-corpo h3 { margin: 6px 0 8px; font-size: 1rem; }
+.det-corpo .orig { color: var(--suave); font-size: .88rem; }
+@media (max-width: 640px) { .filtros p { margin-left: 0; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

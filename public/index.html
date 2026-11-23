@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acompanhamento de encomendas</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <h1>Acompanhamento de encomendas</h1>
+      <p>Status e datas das 4 transportadoras, padronizados em um só formato.</p>
+    </div>
+    <div class="controles">
+      <label>Data de referência
+        <input type="datetime-local" id="ref">
+      </label>
+      <button id="recarregar" type="button">Recarregar dados</button>
+    </div>
+  </header>
+
+  <main>
+    <p id="erro" role="alert" hidden></p>
+    <section id="resumo" class="resumo" aria-label="Resumo por situação"></section>
+
+    <section class="filtros">
+      <label>Transportadora
+        <select id="transp"><option value="">Todas</option></select>
+      </label>
+      <label>Código de rastreio
+        <input id="busca" type="search" placeholder="Ex.: RN000000003BR" autocomplete="off">
+      </label>
+      <p id="contagem" aria-live="polite"></p>
+    </section>
+
+    <div class="tabela-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th><th>Transportadora</th><th>Origem e destino</th>
+            <th>Status atual</th><th>Tempo de transporte</th><th>Previsão</th><th>Situação</th>
+          </tr>
+        </thead>
+        <tbody id="linhas"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <dialog id="detalhe" aria-labelledby="det-titulo"></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "cliente-rastreio-grupo-d",
+  "version": "1.0.0",
+  "description": "Cliente web (Grupo D) que consome a Logistics API do Grupo C e padroniza status e datas",
+  "type": "module",
+  "scripts": {
+    "start": "node servidor.js",
+    "test": "node teste.js"
+  }
+}
